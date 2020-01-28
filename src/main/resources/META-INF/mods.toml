@@ -1,0 +1,28 @@
+odLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/Yuudaari/Soulus-II/issues"
+
+[[mods]]
+    modId="${mod_id}"
+    version="${mod_version}"
+    displayName="${mod_name}"
+    # updateJSONURL="https://raw.githubusercontent.com/Yuudaari/Soulus-II/master/update.json"
+    displayURL="https://soulus.info/ii/"
+    logoFile="logo.png"
+    # credits="I made this all myself"
+    authors="Chirichirichiri"
+    description="You must sift through the ashes of the dead to restore life to the world."
+
+[[dependencies.soulus-ii]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.soulus-ii]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14.4]"
+    ordering="NONE"
+    side="BOTH"

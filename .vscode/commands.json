@@ -1,0 +1,28 @@
+{
+	"commands": [
+		{
+			"command": "workbench.action.tasks.runTask",
+			"text": "$(beaker)  Test",
+			"tooltip": "Tests the mod",
+			"arguments": ["Test"]
+		},
+		{
+			"command": "workbench.action.tasks.runTask",
+			"text": "$(beaker)  Test Server",
+			"tooltip": "Tests the mod",
+			"arguments": ["Test Server"]
+		},
+		{
+			"command": "workbench.action.tasks.runTask",
+			"text": "$(rocket)  Build",
+			"tooltip": "Builds the mod",
+			"arguments": ["Build"]
+		},
+		{
+			"command": "workbench.action.tasks.runTask",
+			"text": "$(checklist)  Setup",
+			"tooltip": "Sets up the decomp workspace",
+			"arguments": ["Setup"]
+		}
+	]
+}
