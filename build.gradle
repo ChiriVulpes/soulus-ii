@@ -57,7 +57,7 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
 
             mods {
                 soulus_ii {
@@ -73,7 +73,7 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'info'
 
             mods {
                 soulus_ii {
@@ -102,6 +102,7 @@ minecraft {
         //     }
         // }
     }
+    
 }
 
 dependencies {
@@ -114,9 +115,7 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         include 'META-INF/mods.toml'
 
-        expand 'mod_id': "${mod_id}"
-        expand 'mod_version': "${version}"
-        expand 'mod_name': "${mod_name}"
+        expand 'mod_id': "${mod_id}", 'mod_version': "${version}", 'mod_name': "${mod_name}"
     }
 
     // copy everything else

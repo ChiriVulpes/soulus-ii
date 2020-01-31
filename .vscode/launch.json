@@ -6,19 +6,10 @@
 	"configurations": [
 		{
 			"type": "java",
-			"name": "Client",
+			"name": "Debug",
 			"request": "attach",
 			"hostName": "localhost",
-			"port": 5005,
-			"preLaunchTask": "Debug"
-		},
-		{
-			"type": "java",
-			"name": "Server",
-			"request": "attach",
-			"hostName": "localhost",
-			"port": 5005,
-			"preLaunchTask": "Debug Server"
+			"port": 5005
 		}
 	]
 }

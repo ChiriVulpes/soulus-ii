@@ -8,14 +8,14 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"command": ".\\gradlew runClient",
+			"command": ".\\gradlew runClient --debug-jvm",
 			"problemMatcher": []
 		},
 		{
 			"label": "Test Server",
 			"type": "shell",
 			"group": "build",
-			"command": ".\\gradlew runServer",
+			"command": ".\\gradlew runServer --debug-jvm",
 			"problemMatcher": []
 		}, 
 		{
@@ -24,18 +24,6 @@
 			"group": "build",
 			"command": ".\\gradlew build",
 			"problemMatcher": []
-		},
-		{
-			"label": "Debug",
-			"type": "shell",
-			"group": "build",
-			"command": "node ./.vscode/debug.js"
-		},
-		{
-			"label": "Debug Server",
-			"type": "shell",
-			"group": "build",
-			"command": "node ./.vscode/debug.js --server"
 		}
 	]
 }
