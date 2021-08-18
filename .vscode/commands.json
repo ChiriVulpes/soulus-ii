@@ -2,20 +2,14 @@
 	"commands": [
 		{
 			"command": "workbench.action.tasks.runTask",
-			"text": "$(beaker)  Test",
-			"tooltip": "Tests the mod",
-			"arguments": ["Test"]
-		},
-		{
-			"command": "workbench.action.tasks.runTask",
-			"text": "$(beaker)  Test Server",
-			"tooltip": "Tests the mod",
-			"arguments": ["Test Server"]
+			"text": "$(type-hierarchy-super)  Reprocess Resources",
+			"tooltip": "Re-processes the mod resources, propagating changes to allow debugging.",
+			"arguments": ["Reprocess Resources"]
 		},
 		{
 			"command": "workbench.action.tasks.runTask",
 			"text": "$(rocket)  Build",
-			"tooltip": "Builds the mod",
+			"tooltip": "Builds the mod.",
 			"arguments": ["Build"]
 		}
 	]

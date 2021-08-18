@@ -111,11 +111,23 @@ dependencies {
 }
 
 processResources {
+    
+    inputs.property "mod_id", mod_id
+    inputs.property "mod_version", mod_version
+    inputs.property "mod_name", mod_name
+    inputs.property "mc_version", mc_version
+    inputs.property "mod_description", mod_description
+    inputs.property "mod_author", mod_author
+    inputs.property "mod_website", mod_website
+    inputs.property "mod_github", mod_github
+    inputs.property "forge_version", forge_version
+    inputs.property "mod_license", mod_license
+    
     // replace stuff in mods.toml
     from(sourceSets.main.resources.srcDirs) {
         include 'META-INF/mods.toml'
 
-        expand 'mod_id': "${mod_id}", 'mod_version': "${version}", 'mod_name': "${mod_name}"
+        expand 'mod_id': "${mod_id}", 'mod_version': "${mod_version}", 'mod_name': "${mod_name}", 'mc_version': "${mc_version}", 'mod_description': "${mod_description}", 'mod_author': "${mod_author}", 'mod_website': "${mod_website}", 'mod_github': "${mod_github}", 'forge_version_major': "${forge_version.substring(0, 2)}", 'mod_license': "${mod_license}"
     }
 
     // copy everything else
@@ -124,8 +136,16 @@ processResources {
     }
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
+task fixBin {
+    project.delete(files("${projectDir}/bin/main/META-INF"))
+    copy {
+        from "${buildDir}/resources/main/META-INF"
+        into "${projectDir}/bin/main/META-INF"
+    }
+}
+
 jar {
+    // Example for how to get properties into the manifest for reading by the runtime..
     manifest {
         attributes([
             "Specification-Title": "${mod_id}",

@@ -1,6 +1,5 @@
 {
 	"java.configuration.updateBuildConfiguration": "automatic",
 	"java.format.comments.enabled": false,
-	"java.format.settings.url": "./.settings/format.xml",
-	"java.format.settings.profile": "GoogleStyle"
+	"java.format.settings.url": "./.settings/format.xml"
 }

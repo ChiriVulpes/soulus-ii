@@ -2,22 +2,12 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Test",
-			"type": "shell",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"command": ".\\gradlew runClient --debug-jvm",
-			"problemMatcher": []
-		},
-		{
-			"label": "Test Server",
+			"label": "Reprocess Resources",
 			"type": "shell",
 			"group": "build",
-			"command": ".\\gradlew runServer --debug-jvm",
+			"command": ".\\gradlew processResources",
 			"problemMatcher": []
-		}, 
+		},
 		{
 			"label": "Build",
 			"type": "shell",
