@@ -15,7 +15,7 @@ public class BlockFossil {
 		.material(Material.BAMBOO)
 		.properties(properties -> properties
 			.harvestTool(ToolType.AXE)
-			.setLightLevel(light -> 1))
+			.lightLevel(light -> 1))
 		.create();
 
 }

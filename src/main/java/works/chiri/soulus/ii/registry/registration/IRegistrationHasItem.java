@@ -34,22 +34,22 @@ public interface IRegistrationHasItem<T extends IForgeRegistryEntry<T>, I extend
 
 
 	////////////////////////////////////
-	// Description
+	// About Info
 	//
 
-	public default boolean hasDescription () {
-		return Dictionary.DESCRIPTION.translation(getDescriptionRegistryName()).exists();
+	public default boolean hasAboutInfo () {
+		return Dictionary.ABOUT_INFO.translation(getAboutInfoRegistryName()).exists();
 	}
 
-	public default String getDescription () {
-		return Dictionary.DESCRIPTION.translation(getDescriptionRegistryName()).localise();
+	public default String getAboutInfo () {
+		return Dictionary.ABOUT_INFO.translation(getAboutInfoRegistryName()).localise();
 	}
 
-	public default String getDescriptionRegistryName () {
+	public default String getAboutInfoRegistryName () {
 		return getRegistryName().toString();
 	}
 
-	public default Ingredient getDescriptionIngredient () {
+	public default Ingredient getAboutInfoIngredient () {
 		return null;
 	}
 

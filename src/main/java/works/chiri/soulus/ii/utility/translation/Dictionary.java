@@ -9,7 +9,7 @@ public enum Dictionary {
 		/**
 		 * @param registryName — IE <code>soulus:fossil_dirt</code>
 		 */
-		DESCRIPTION("jei.description.%1$s"),
+		ABOUT_INFO("jei.description.%1$s"),
 		/**
 		 * @param registryName — IE <code>soulus:teleport_multiple</code>
 		 */

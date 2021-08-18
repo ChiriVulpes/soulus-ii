@@ -12,7 +12,7 @@
       "args": "",
       "env": {
         "MOD_CLASSES": "soulus_ii%%${workspaceFolder}\\bin\\main;soulus_ii%%${workspaceFolder}\\bin\\main",
-        "MCP_MAPPINGS": "snapshot_20210309-1.16.5",
+        "MCP_MAPPINGS": "official_1.16.5",
         "MCP_VERSION": "20210115.111550",
         "FORGE_VERSION": "36.2.0",
         "assetIndex": "1.16",
@@ -34,7 +34,7 @@
       "args": "",
       "env": {
         "MOD_CLASSES": "soulus_ii%%${workspaceFolder}\\bin\\main;soulus_ii%%${workspaceFolder}\\bin\\main",
-        "MCP_MAPPINGS": "snapshot_20210309-1.16.5",
+        "MCP_MAPPINGS": "official_1.16.5",
         "MCP_VERSION": "20210115.111550",
         "FORGE_VERSION": "36.2.0",
         "FORGE_GROUP": "net.minecraftforge",

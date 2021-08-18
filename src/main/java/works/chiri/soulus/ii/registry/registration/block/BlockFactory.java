@@ -47,7 +47,7 @@ public class BlockFactory<B extends Block> extends RegistrationFactory<Block, B,
 	}
 
 	public BlockFactory<B> mapColor (final DyeColor colour) {
-		this.materialColour = colour.getMapColor();
+		this.materialColour = colour.getMaterialColor();
 		return this;
 	}
 
@@ -66,7 +66,7 @@ public class BlockFactory<B extends Block> extends RegistrationFactory<Block, B,
 	public Block.Properties createProperties () {
 		Block.Properties properties = null;
 		if (inheritFrom != null)
-			properties = Block.Properties.from(inheritFrom);
+			properties = Block.Properties.copy(inheritFrom);
 
 		if (material == null && properties == null)
 			throw new IllegalStateException("Cannot create block properties without a material");
@@ -75,7 +75,7 @@ public class BlockFactory<B extends Block> extends RegistrationFactory<Block, B,
 		if (materialColour == null && material != null)
 			materialColour = material.getColor();
 
-		properties = properties != null ? properties : Block.Properties.create(material, materialColour);
+		properties = properties != null ? properties : Block.Properties.of(material, materialColour);
 		if (propertiesInitialiser != null)
 			propertiesInitialiser.accept(properties);
 

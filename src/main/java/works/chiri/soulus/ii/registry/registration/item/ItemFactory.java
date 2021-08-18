@@ -47,25 +47,25 @@ public class ItemFactory<I extends Item> extends RegistrationFactory<Item, I, It
 		final Item.Properties properties = new Item.Properties();
 
 		if (inheritFrom != null) {
-			final Food food = inheritFrom.getFood(); // fragile, can be overrided
+			final Food food = inheritFrom.getFoodProperties(); // fragile, can be overrided
 			if (food != null)
 				properties.food(food);
 
 			final int maxStackSize = inheritFrom.getMaxStackSize();
 			if (maxStackSize != 64) // grrr hardcoded
-				properties.maxStackSize(maxStackSize);
+				properties.stacksTo(maxStackSize);
 
 			final int maxDamage = inheritFrom.getMaxDamage();
 			if (maxDamage != 0)
-				properties.maxDamage(maxDamage);
+				properties.durability(maxDamage);
 
-			final Item containerItem = inheritFrom.getContainerItem();
+			final Item containerItem = inheritFrom.getCraftingRemainingItem();
 			if (containerItem != null)
-				properties.containerItem(containerItem);
+				properties.craftRemainder(containerItem);
 
-			final ItemGroup group = inheritFrom.getGroup();
+			final ItemGroup group = inheritFrom.getItemCategory();
 			if (group != null)
-				properties.group(group);
+				properties.tab(group);
 
 			final Rarity rarity = inheritFrom.getRarity(ItemStack.EMPTY); // fragile, can be overrided
 			if (rarity != null)

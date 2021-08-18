@@ -10,7 +10,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Translation {
 
 	public static String localise (final String id, final Object... args) {
-		return new TranslationTextComponent(id, args).getUnformattedComponentText();
+		return new TranslationTextComponent(id, args).getContents();
 	}
 
 	public static boolean hasLocalization (final String id) {
