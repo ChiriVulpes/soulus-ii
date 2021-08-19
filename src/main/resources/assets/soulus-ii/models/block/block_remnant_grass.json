@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "soulus-ii:block/block_remnant_grass_top",
+    "bottom": "soulus-ii:block/block_remnant",
+    "side": "soulus-ii:block/block_remnant_grass",
+    "particle": "soulus-ii:block/block_remnant_grass"
+  }
+}

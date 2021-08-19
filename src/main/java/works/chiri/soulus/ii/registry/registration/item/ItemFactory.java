@@ -1,6 +1,7 @@
 package works.chiri.soulus.ii.registry.registration.item;
 
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
@@ -22,6 +23,11 @@ public class ItemFactory<I extends Item> extends RegistrationFactory<Item, I, It
 
 	public ItemFactory (final Item item) {
 		inherit(item);
+	}
+
+	public ItemFactory (final Function<Item.Properties, I> function) {
+		super();
+		supplier = () -> function.apply(createProperties());
 	}
 
 	private Item inheritFrom = null;

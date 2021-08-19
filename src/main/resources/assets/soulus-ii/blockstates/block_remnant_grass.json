@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "ashen=false": [
+      {
+        "model": "soulus-ii:block/block_remnant_grass"
+      },
+      {
+        "model": "soulus-ii:block/block_remnant_grass",
+        "y": 90
+      },
+      {
+        "model": "soulus-ii:block/block_remnant_grass",
+        "y": 180
+      },
+      {
+        "model": "soulus-ii:block/block_remnant_grass",
+        "y": 270
+      }
+    ],
+    "ashen=true": {
+      "model": "soulus-ii:block/block_remnant_grass_ashen"
+    }
+  }
+}

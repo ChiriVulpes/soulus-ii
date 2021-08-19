@@ -1,18 +1,24 @@
 package works.chiri.soulus.ii.registry.registration;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.function.Supplier;
 
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 
 public abstract class RegistrationFactory<T extends IForgeRegistryEntry<T>, R extends T, F extends RegistrationFactory<T, R, F>> {
 
-	private Class<? extends T> cls = getDefaultRegistrationClass();
+	protected Supplier<? extends T> supplier = this::construct;
+	protected Class<? extends T> cls = getDefaultRegistrationClass();
 
 	public RegistrationFactory () {}
 
 	public RegistrationFactory (final Class<? extends R> cls) {
 		this.cls = cls;
+	}
+
+	public RegistrationFactory (final Supplier<? extends T> supplier) {
+		this.supplier = supplier;
 	}
 
 	////////////////////////////////////
@@ -40,33 +46,9 @@ public abstract class RegistrationFactory<T extends IForgeRegistryEntry<T>, R ex
 
 	@SuppressWarnings("unchecked")
 	public final R create () {
-		return (R) create(cls);
-	}
-
-	@SuppressWarnings("unchecked")
-	public final <C extends T> C create (final Class<C> cls) {
-		Class<? extends T> useClass = cls;
-		if (useClass == null)
-			useClass = this.cls;
-
-		C registration;
-		try {
-			registration = (C) useClass.getDeclaredConstructor(getConstructorParameterTypes())
-				.newInstance(getConstructorParameters());
-
-		}
-		catch (final NoSuchMethodException | InstantiationException | IllegalAccessException
-			| InvocationTargetException e) {
-			throw new IllegalStateException("Unable to call constructor on " + getClass().getName() + " class");
-		}
-
-		// if (name == null)
-		// 	throw new IllegalStateException(getClass().getName() + " registration requires a name");
-
-		// registration.setRegistryName(name);
+		final T registration = supplier.get();
 		initialise(registration);
-
-		return registration;
+		return (R) registration;
 	}
 
 	protected abstract Class<? extends T> getDefaultRegistrationClass ();
@@ -79,6 +61,25 @@ public abstract class RegistrationFactory<T extends IForgeRegistryEntry<T>, R ex
 
 	protected Object[] getConstructorParameters () {
 		return new Object[0];
+	}
+
+	private T construct () {
+		Class<? extends T> useClass = cls;
+		if (useClass == null)
+			useClass = this.cls;
+
+		T registration;
+		try {
+			registration = (T) useClass.getDeclaredConstructor(getConstructorParameterTypes())
+				.newInstance(getConstructorParameters());
+
+		}
+		catch (final NoSuchMethodException | InstantiationException | IllegalAccessException
+			| InvocationTargetException e) {
+			throw new IllegalStateException("Unable to call constructor on " + getClass().getName() + " class", e);
+		}
+
+		return registration;
 	}
 
 }

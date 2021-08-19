@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "soulus-ii:block/block_remnant"
+      },
+      {
+        "model": "soulus-ii:block/block_remnant",
+        "y": 90
+      },
+      {
+        "model": "soulus-ii:block/block_remnant",
+        "y": 180
+      },
+      {
+        "model": "soulus-ii:block/block_remnant",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -24,5 +24,13 @@ public class Register {
 
 	}
 
+	@Target(ElementType.FIELD)
+	@Retention(RetentionPolicy.RUNTIME)
+	public static @interface WorldType {
+
+		String value ();
+
+	}
+
 }
 

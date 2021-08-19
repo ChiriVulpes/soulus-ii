@@ -7,6 +7,8 @@ import works.chiri.soulus.ii.SoulusII;
 
 public interface IRegistration<T extends IForgeRegistryEntry<T>> extends IForgeRegistryEntry<T> {
 
+	public default void onRegistration () {}
+
 	public abstract T setRegistryName (final String mod, final String name);
 
 	public abstract T setRegistryName (final String name);

@@ -17,9 +17,13 @@ public interface IBlockRegistration<B extends Block, I extends Item> extends IRe
 	// Item
 	//
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "unlikely-arg-type" })
 	@Override
 	public default I getItem () {
+		final Item item = Item.BY_BLOCK.get(this);
+		if (item != null)
+			return (I) item;
+
 		final net.minecraft.item.Item.Properties properties = new Item.Properties();
 		itemProperties(properties);
 		return (I) Registration.Item.Factory(BlockItem.class).properties(this::itemProperties).create();

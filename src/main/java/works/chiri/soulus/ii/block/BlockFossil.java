@@ -10,7 +10,7 @@ import works.chiri.soulus.ii.registry.registration.Registration;
 public class BlockFossil {
 
 	@Register.Block("banna")
-	public static Registration.Block INSTANCE = Registration.Block.Factory()
+	public static final Registration.Block INSTANCE = Registration.Block.Factory()
 		.mapColor(DyeColor.BLACK)
 		.material(Material.BAMBOO)
 		.properties(properties -> properties
