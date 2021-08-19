@@ -1,6 +1,9 @@
 {
 	"generator.soulus-ii.wasteland": "Wasteland",
-	"block.soulus-ii:block_remnant": "Remnant",
-	"block.soulus-ii:block_remnant_grass": "Grass Remnant",
-	"block.soulus-ii:block_remnant_grass_ashen": "Ashen Grass Remnant"
+	"itemGroup.soulus-ii": "Soulus II",
+	"block.soulus-ii.block_remnant": "Remnant",
+	"block.soulus-ii.block_remnant_grass": "Grass Remnant",
+	"block.soulus-ii.block_remnant_grass_ashen": "Ashen Grass Remnant",
+	"block.soulus-ii.block_ash": "Ash",
+	"block.soulus-ii.block_ash_layer": "Ash Layer"
 }

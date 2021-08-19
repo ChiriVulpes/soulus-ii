@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "layers=1": {
+      "model": "soulus-ii:block/block_ash_layer/height2"
+    },
+    "layers=2": {
+      "model": "soulus-ii:block/block_ash_layer/height4"
+    },
+    "layers=3": {
+      "model": "soulus-ii:block/block_ash_layer/height6"
+    },
+    "layers=4": {
+      "model": "soulus-ii:block/block_ash_layer/height8"
+    },
+    "layers=5": {
+      "model": "soulus-ii:block/block_ash_layer/height10"
+    },
+    "layers=6": {
+      "model": "soulus-ii:block/block_ash_layer/height12"
+    },
+    "layers=7": {
+      "model": "soulus-ii:block/block_ash_layer/height14"
+    },
+    "layers=8": {
+      "model": "soulus-ii:block/block_ash"
+    }
+  }
+}

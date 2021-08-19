@@ -9,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraftforge.common.ToolType;
+import works.chiri.soulus.ii.client.SoulusIIItemGroup;
 import works.chiri.soulus.ii.registry.registration.Registration;
 import works.chiri.soulus.ii.registry.registration.RegistrationFactory;
 
@@ -51,6 +52,7 @@ public class ItemFactory<I extends Item> extends RegistrationFactory<Item, I, It
 	@SuppressWarnings("deprecation")
 	public Item.Properties createProperties () {
 		final Item.Properties properties = new Item.Properties();
+		properties.tab(SoulusIIItemGroup.INSTANCE);
 
 		if (inheritFrom != null) {
 			final Food food = inheritFrom.getFoodProperties(); // fragile, can be overrided
